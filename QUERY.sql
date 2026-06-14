@@ -164,7 +164,7 @@ SELECT
     booking_id,
     full_name,
     fixture,
-    round(total_cost)
+    round(total_cost) as total_cost
 FROM
     bookings
     INNER JOIN users USING (user_id)
