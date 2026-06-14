@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Users (
-    user_id serial PRIMARY KEY,
+    user_id int PRIMARY KEY,
     full_name varchar(100) NOT NULL,
     email varchar(100) UNIQUE,
     role varchar(50) CHECK (role IN ('Ticket Manager', 'Football Fan')),
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Users (
 );
 
 CREATE TABLE IF NOT EXISTS Matches (
-    match_id serial PRIMARY KEY,
+    match_id int PRIMARY KEY,
     fixture text NOT NULL,
     tournament_category varchar(255) NOT NULL,
     base_ticket_price decimal(10, 2) NOT NULL CHECK (base_ticket_price >= 0),
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS Matches (
 );
 
 CREATE TABLE IF NOT EXISTS Bookings (
-    booking_id serial PRIMARY KEY,
+    booking_id int PRIMARY KEY,
     user_id int NOT NULL REFERENCES Users (user_id),
     match_id int NOT NULL REFERENCES Matches (match_id),
     seat_number varchar(10),
