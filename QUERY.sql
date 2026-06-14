@@ -136,6 +136,7 @@ WHERE
     tournament_category = 'Champions League'
     AND match_status = 'Available'
 
+    
     --query-2
 SELECT
     user_id,
@@ -146,6 +147,7 @@ FROM
 WHERE
     full_name ILIKE 'Tanvir%'
     OR full_name ILIKE '%Haque%';
+
 
 --query-3
 SELECT
@@ -180,6 +182,7 @@ FROM
     users
     LEFT JOIN bookings USING (user_id)
 
+
     --query-6
 SELECT
     booking_id,
@@ -194,6 +197,8 @@ WHERE
         FROM
             bookings
     )
+
+    
     --query-7
 SELECT
     match_id,
