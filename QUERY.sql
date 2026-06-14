@@ -146,3 +146,26 @@ FROM
 WHERE
     full_name ILIKE 'Tanvir%'
     OR full_name ILIKE '%Haque%';
+
+--query-3
+SELECT
+    booking_id,
+    user_id,
+    match_id,
+    coalesce(payment_status, 'Action Required') AS systematic_status
+FROM
+    bookings
+WHERE
+    payment_status IS NULL
+
+
+    --query-4
+SELECT
+    booking_id,
+    full_name,
+    fixture,
+    round(total_cost)
+FROM
+    bookings
+    INNER JOIN users USING (user_id)
+    INNER JOIN matches USING (match_id)
