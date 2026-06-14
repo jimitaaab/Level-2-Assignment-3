@@ -179,3 +179,18 @@ SELECT
 FROM
     users
     LEFT JOIN bookings USING (user_id)
+
+    --query-6
+SELECT
+    booking_id,
+    match_id,
+    round(total_cost) AS total_cost
+FROM
+    bookings
+WHERE
+    total_cost > (
+        SELECT
+            avg(total_cost)
+        FROM
+            bookings
+    )
