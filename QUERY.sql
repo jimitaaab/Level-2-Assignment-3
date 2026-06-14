@@ -194,3 +194,16 @@ WHERE
         FROM
             bookings
     )
+    --query-7
+SELECT
+    match_id,
+    fixture,
+    round(base_ticket_price) AS base_ticket_price
+FROM
+    matches
+ORDER BY
+    base_ticket_price DESC
+OFFSET
+    1
+LIMIT
+    2
