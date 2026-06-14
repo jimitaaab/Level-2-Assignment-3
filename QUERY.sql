@@ -169,3 +169,13 @@ FROM
     bookings
     INNER JOIN users USING (user_id)
     INNER JOIN matches USING (match_id)
+
+
+    --query-5
+SELECT
+    user_id,
+    full_name,
+    booking_id
+FROM
+    users
+    LEFT JOIN bookings USING (user_id)
