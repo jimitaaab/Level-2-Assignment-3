@@ -124,3 +124,14 @@ VALUES
     (503, 2, 101, 'A-13', 'Confirmed', 150.00),
     (504, 2, 101, NULL, NULL, 150.00),
     (505, 3, 102, 'C-20', 'Pending', 120.00);
+
+//query-1
+SELECT
+    match_id,
+    fixture,
+    round(base_ticket_price) AS base_ticket_price
+FROM
+    matches
+WHERE
+    tournament_category = 'Champions League'
+    AND match_status = 'Available'
