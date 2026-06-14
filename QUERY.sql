@@ -125,7 +125,7 @@ VALUES
     (504, 2, 101, NULL, NULL, 150.00),
     (505, 3, 102, 'C-20', 'Pending', 120.00);
 
-//query-1
+    --query-1
 SELECT
     match_id,
     fixture,
@@ -135,3 +135,14 @@ FROM
 WHERE
     tournament_category = 'Champions League'
     AND match_status = 'Available'
+
+    --query-2
+SELECT
+    user_id,
+    full_name,
+    email
+FROM
+    users
+WHERE
+    full_name ILIKE 'Tanvir%'
+    OR full_name ILIKE '%Haque%';
